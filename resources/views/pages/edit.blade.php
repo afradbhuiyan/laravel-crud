@@ -14,7 +14,7 @@
 
                     <div class="create-sec__topBar">
                         <h5 class="create-sec__subTitle">
-                            Add a student
+                            Edit the student
                         </h5>
 
                         <a class="btn btn--primary btn--create" href="{{ route('home') }}">
@@ -24,11 +24,11 @@
                     </div>
 
                     <div class="create-sec__form">
-                        <form class="form form--create" action="{{ route('students.store') }}" method="POST">
+                        <form class="form form--create" action="{{ route('students.update',['id'=>$student->id]) }}" method="POST">
                             <div class="form__row form__row--name">
                                 <div class="form__field">
                                     @csrf
-                                    <input class="form__input" type="text" name="name" placeholder="Name" value="{{ old('name') }}">
+                                    <input class="form__input" type="text" name="name" placeholder="Name" value="{{ $student->name }}">
                                     
                                     @error('name')
                                         <div class="form__msg form__msg--error">
@@ -42,7 +42,7 @@
 
                             <div class="form__row form__row--age">
                                 <div class="form__field">
-                                    <input class="form__input form__input--text" type="text" name="age" placeholder="Age" value="{{ old('age') }}">
+                                    <input class="form__input form__input--text" type="text" name="age" placeholder="Age" value="{{ $student->age }}">
 
                                     @error('age')
                                         <div class="form__msg form__msg--error">
@@ -58,8 +58,19 @@
                                     <div class="form__select">
                                         <select class="form__input form__input--select" name="gender">
                                             <option value="">Select Your Gender</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
+
+                                            @if ($student->gender == 'Male')
+
+                                                <option selected value="Male">Male</option>
+                                                <option value="Female">Female</option>
+
+                                            @elseif ($student->gender == 'Female')
+                                            
+                                                <option value="Male">Male</option>
+                                                <option selected value="Female">Female</option>
+                    
+                                            @endif
+                                           
                                         </select>
                                     </div>
                                     @error('gender')
@@ -73,7 +84,7 @@
                                                      
                             <div class="form__row form__row--city">
                                 <div class="form__field">
-                                    <input class="form__input form__input--text" type="text" name="city" placeholder="City" value="{{ old('city') }}">
+                                    <input class="form__input form__input--text" type="text" name="city" placeholder="City" value="{{ $student->city }}">
                                     
                                     @error('city')
                                         <div class="form__msg form__msg--error">

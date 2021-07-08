@@ -67,11 +67,11 @@
                                             </td>
                                             <td class="table__td table__td--action">
                                                 <div class="table__td-wrap">
-                                                    <a class="btn btn--icon btn--edit" href="#">
+                                                    <a class="btn btn--icon btn--edit" href="{{ route('students.edit',['id'=>$student->id]) }}">
                                                         <i class="btn__icon fas fa-edit"></i>
                                                     </a>
 
-                                                    <a class="btn btn--icon btn--delete" href="#">
+                                                    <a class="btn btn--icon btn--delete" href="">
                                                         <i class="btn__icon fas fa-trash"></i>
                                                     </a>
                                                 </div>

@@ -15,7 +15,7 @@ class StudentsController extends Controller
     public function index()
     {
 
-        $students = DB::table('students')->get();
+        $students = DB::table('students')->orderBy('id','desc')->get();
             
         return view('pages.home' , [
             'students'=>$students
@@ -77,7 +77,11 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = DB::table('students')->find($id);
+        
+        return view('pages.edit',[
+            'student'=>$student
+        ]);
     }
 
     /**
@@ -89,7 +93,21 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        //validate the form data
+        $data = $request->validate([
+            'name'=>'required|min:3|max:20',
+            'age'=>'required|integer',
+            'gender'=>'required',
+            'city'=>'required'
+        ]);
+
+        //add timestamp in updated_at column
+        $data['updated_at'] = new \DateTime();
+    
+        DB::table('students')->where('id',$id)->update($data);
+
+        return \redirect(route('home'));
     }
 
     /**
@@ -100,6 +118,6 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }
