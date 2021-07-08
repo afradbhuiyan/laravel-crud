@@ -119,5 +119,8 @@ class StudentsController extends Controller
     public function destroy($id)
     {
 
+        DB::table('students')->where('id',$id)->delete();
+
+        return \redirect(route('home'));
     }
 }

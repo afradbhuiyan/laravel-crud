@@ -8,4 +8,4 @@ Route::get('/students/create', [StudentsController::class, 'create'])->name('stu
 Route::post('/students/store', [StudentsController::class, 'store'])->name('students.store');
 Route::get('/students/edit/{id}', [StudentsController::class, 'edit'])->name('students.edit');
 Route::post('/students/update/{id}', [StudentsController::class, 'update'])->name('students.update');
-
+Route::get('/students/destroy/{id}', [StudentsController::class, 'destroy'])->name('students.destroy');

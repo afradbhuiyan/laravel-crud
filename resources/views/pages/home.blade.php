@@ -71,7 +71,7 @@
                                                         <i class="btn__icon fas fa-edit"></i>
                                                     </a>
 
-                                                    <a class="btn btn--icon btn--delete" href="">
+                                                    <a class="btn btn--icon btn--delete" href="{{ route('students.destroy', ['id'=>$student->id]) }}">
                                                         <i class="btn__icon fas fa-trash"></i>
                                                     </a>
                                                 </div>
