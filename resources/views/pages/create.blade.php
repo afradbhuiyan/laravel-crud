@@ -24,26 +24,32 @@
                     </div>
 
                     <div class="create-sec__form">
-                        <form class="form form--create" action="#" method="POST">
+                        <form class="form form--create" action="{{ route('students.store') }}" method="POST">
                             <div class="form__row form__row--name">
                                 <div class="form__field">
-                                    <input class="form__input" type="text" name="name" placeholder="Name">
+                                    @csrf
+                                    <input class="form__input" type="text" name="name" placeholder="Name" value="{{ old('name') }}">
                                     
-                                    <div class="form__msg form__msg--error">
-                                        <i class="form__msg-icon fas fa-exclamation-circle"></i>
-                                        <span class="form__msg-txt">Lorem ipsum dolor sit amet.</span>
-                                    </div>
+                                    @error('name')
+                                        <div class="form__msg form__msg--error">
+                                            <i class="form__msg-icon fas fa-exclamation-circle"></i>
+                                            <span class="form__msg-txt">{{ $message }}</span>
+                                        </div>
+                                    @enderror
+                                  
                                 </div>
                             </div>
 
                             <div class="form__row form__row--age">
                                 <div class="form__field">
-                                    <input class="form__input form__input--text" type="text" name="age" placeholder="Age">
-                                    
-                                    <div class="form__msg form__msg--error">
-                                        <i class="form__msg-icon fas fa-exclamation-circle"></i>
-                                        <span class="form__msg-txt">Lorem ipsum dolor sit amet.</span>
-                                    </div>
+                                    <input class="form__input form__input--text" type="text" name="age" placeholder="Age" value="{{ old('age') }}">
+
+                                    @error('age')
+                                        <div class="form__msg form__msg--error">
+                                            <i class="form__msg-icon fas fa-exclamation-circle"></i>
+                                            <span class="form__msg-txt">{{ $message }}</span>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -56,28 +62,31 @@
                                             <option value="male">Female</option>
                                         </select>
                                     </div>
-
-                                    <div class="form__msg form__msg--error">
-                                        <i class="form__msg-icon fas fa-exclamation-circle"></i>
-                                        <span class="form__msg-txt">Lorem ipsum dolor sit amet.</span>
-                                    </div>
+                                    @error('gender')
+                                        <div class="form__msg form__msg--error">
+                                            <i class="form__msg-icon fas fa-exclamation-circle"></i>
+                                            <span class="form__msg-txt">{{ $message }}</span>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                                                      
                             <div class="form__row form__row--city">
                                 <div class="form__field">
-                                    <input class="form__input form__input--text" type="text" name="city" placeholder="City">
+                                    <input class="form__input form__input--text" type="text" name="city" placeholder="City" value="{{ old('city') }}">
                                     
-                                    <div class="form__msg form__msg--error">
-                                        <i class="form__msg-icon fas fa-exclamation-circle"></i>
-                                        <span class="form__msg-txt">Lorem ipsum dolor sit amet.</span>
-                                    </div>
+                                    @error('city')
+                                        <div class="form__msg form__msg--error">
+                                            <i class="form__msg-icon fas fa-exclamation-circle"></i>
+                                            <span class="form__msg-txt">{{ $message }}</span>
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                                                      
                             <div class="form__row form__row--age">
                                 <div class="form__field">
-                                    <button class="btn btn--primary btn--add" type="button">
+                                    <button class="btn btn--primary btn--add" type="submit">
                                         <span class="btn__txt">Add</span>
                                     </button>
                                 </div>

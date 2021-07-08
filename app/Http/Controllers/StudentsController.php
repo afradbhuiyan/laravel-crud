@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentsController extends Controller
 {
@@ -13,8 +14,12 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        //
-       return view('pages.home');
+
+        $students = DB::table('students')->get();
+            
+        return view('pages.home' , [
+            'students'=>$students
+        ]);
     }
 
     /**
@@ -36,7 +41,21 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        //validate the form data
+        $data = $request->validate([
+            'name'=>'required|min:3|max:20',
+            'age'=>'required|integer',
+            'gender'=>'required',
+            'city'=>'required'
+        ]);
+
+        //add timestamp in created_at column
+        $data['created_at'] = new \DateTime();
+    
+        DB::table('students')->insert($data);
+
+        return \redirect(route('home'));
     }
 
     /**
