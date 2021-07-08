@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+//abstract
+@import './abstract/variables';
+
+//base
+@import './base/reset';
+@import './base/typography';
+
+//vendors
+@import './vendors/bootstrap';
+
+//components
+@import './components/table';
+
+//pages
+@import './pages/home';
