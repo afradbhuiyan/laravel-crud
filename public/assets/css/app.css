@@ -1394,3 +1394,103 @@ h6 {
     margin-left: 91.6666666667%;
   }
 }
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  text-decoration: none;
+}
+.btn--primary {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #000000;
+  background-color: #69ffc5;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+}
+.btn--primary:hover, .btn--primary:focus {
+  background-color: rgba(105, 255, 197, 0.8);
+}
+.btn--icon {
+  font-size: 1.6rem;
+  color: #343a40;
+}
+.btn--icon .btn__icon {
+  margin-right: 0;
+}
+.btn--icon:hover, .btn--icon:focus {
+  color: rgba(52, 58, 64, 0.5);
+}
+.btn--create {
+  display: flex;
+}
+.btn--edit {
+  margin: 0 0.4rem 0 0;
+}
+.btn--delete {
+  margin: 0 0 0 0.4rem;
+}
+.btn__icon {
+  margin: 0 0.25rem 0 0;
+}
+.btn__txt {
+  margin: 0 0 0 0.25rem;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.table--homeSec .table__thead {
+  background-color: #69ffc5;
+}
+.table__tr {
+  border: 1px solid #eee;
+}
+.table__tr--tbody:nth-child(even) {
+  background-color: #f8f9fa;
+}
+.table__th {
+  border: 1px solid #eee;
+  padding: 1.5rem 0.5rem;
+  text-align: left;
+}
+.table__td {
+  border: 1px solid #eee;
+  padding: 1rem 0.5rem;
+  text-align: left;
+}
+.table__td--action .table__td-wrap {
+  text-align: center;
+}
+
+body {
+  background-color: #eeeeeea8;
+}
+
+.main-wrap {
+  margin: auto 0;
+}
+
+.home-sec__col {
+  background-color: #FDFDFD;
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.home-sec__title {
+  text-align: center;
+  margin: 0 0 5rem 0;
+}
+.home-sec__subTitle {
+  margin: auto auto auto 0;
+  border-left: 0.3rem solid #69ffc5;
+  padding: 0.2rem 0 0.2rem 0.3rem;
+}
+.home-sec__topBar {
+  margin: 0 0 2.5rem 0;
+  display: flex;
+}
+.home-sec__table {
+  margin: 2.5rem 0 0 0;
+}

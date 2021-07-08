@@ -14,7 +14,10 @@
 </head>
 <body> 
     
-
+    
+    <main class="main-wrap">
+        @yield('content')
+    </main>
 
 
 </body>
