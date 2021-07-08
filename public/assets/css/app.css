@@ -1398,6 +1398,11 @@ h6 {
   display: inline-block;
   background-color: transparent;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
 }
 .btn--primary {
   font-size: 1.6rem;
@@ -1424,10 +1429,14 @@ h6 {
   display: flex;
 }
 .btn--edit {
-  margin: 0 0.4rem 0 0;
+  margin: 0 0.5rem 0 0;
 }
 .btn--delete {
-  margin: 0 0 0 0.4rem;
+  margin: 0 0 0 0.5rem;
+}
+.btn--add {
+  width: 100%;
+  padding: 1.5rem;
 }
 .btn__icon {
   margin: 0 0.25rem 0 0;
@@ -1464,6 +1473,41 @@ h6 {
   text-align: center;
 }
 
+.form--create .form__row:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__input {
+  width: 100%;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0.15rem solid #eee;
+}
+.form__input:focus {
+  outline: none;
+  border-color: #343a40;
+}
+.form__input--select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form__msg {
+  display: flex;
+  margin: 1rem 0 0 0;
+}
+.form__msg--error {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #dc3545;
+}
+.form__msg-icon {
+  margin: 0 0.25rem 0 0;
+}
+.form__msg-txt {
+  margin: 0 0 0 0.25rem;
+}
+
 body {
   background-color: #eeeeeea8;
 }
@@ -1492,5 +1536,36 @@ body {
   display: flex;
 }
 .home-sec__table {
+  margin: 2.5rem 0 0 0;
+}
+
+body {
+  background-color: #eeeeeea8;
+}
+
+.main-wrap {
+  margin: auto 0;
+}
+
+.create-sec__col {
+  background-color: #FDFDFD;
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.create-sec__title {
+  text-align: center;
+  margin: 0 0 5rem 0;
+}
+.create-sec__subTitle {
+  margin: auto auto auto 0;
+  border-left: 0.3rem solid #69ffc5;
+  padding: 0.2rem 0 0.2rem 0.3rem;
+}
+.create-sec__topBar {
+  margin: 0 0 2.5rem 0;
+  display: flex;
+}
+.create-sec__form {
   margin: 2.5rem 0 0 0;
 }

@@ -14,7 +14,7 @@
 
                     <div class="home-sec__topBar">
                         <h5 class="home-sec__subTitle">
-                            All Students
+                            All students
                         </h5>
 
                         <a class="btn btn--primary btn--create" href="{{ route('students.create') }}">

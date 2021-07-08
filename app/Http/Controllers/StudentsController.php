@@ -25,7 +25,7 @@ class StudentsController extends Controller
     public function create()
     {
         
-        echo 'show the create form';
+        return view('pages.create');
     }
 
     /**
